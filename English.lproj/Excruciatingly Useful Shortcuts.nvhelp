@@ -79,4 +79,7 @@ Text formatting shortcuts:\
 
 \f1 \uc0\u8984 
 \f0 -U		Underline\
+
+\f1 \uc0\u8984 
+\f0 --		Strikethrough\
 }

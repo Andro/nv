@@ -42,6 +42,7 @@
 @implementation NSMutableDictionary (FontTraits)
 
 - (void)addDesiredAttributesFromDictionary:(NSDictionary*)dict {
+	id strikethroughStyle = [dict objectForKey:NSStrikethroughStyleAttributeName];
 	id underlineStyle = [dict objectForKey:NSUnderlineStyleAttributeName];
 	id strokeWidthStyle = [dict objectForKey:NSStrokeWidthAttributeName];
 	id obliquenessStyle = [dict objectForKey:NSObliquenessAttributeName];
@@ -51,6 +52,8 @@
 		[self setObject:linkStyle forKey:NSLinkAttributeName];
 	if (underlineStyle)
 		[self setObject:underlineStyle forKey:NSUnderlineStyleAttributeName];
+	if (strikethroughStyle)
+		[self setObject:strikethroughStyle forKey:NSStrikethroughStyleAttributeName];
 	if (strokeWidthStyle)
 		[self setObject:strokeWidthStyle forKey:NSStrokeWidthAttributeName];
 	if (obliquenessStyle)

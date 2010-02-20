@@ -104,6 +104,10 @@ static long (*GetGetScriptManagerVariablePointer())(short);
 	[theMenuItem setTarget:self];
 	[formatMenu addItem:theMenuItem];
 	
+	theMenuItem = [[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Strikethrough",nil) action:@selector(strikethrough:) keyEquivalent:@""] autorelease];
+	[theMenuItem setTarget:self];
+	[formatMenu addItem:theMenuItem];
+
 	theMenuItem = [[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Format",@"format submenu title") action:NULL keyEquivalent:@""] autorelease];
 	[theMenu addItem:theMenuItem];
 	[theMenu setSubmenu:formatMenu forItem:theMenuItem];
@@ -563,6 +567,14 @@ copyRTFType:
 	alternateAttributeValue:[NSNumber numberWithFloat:OBLIQUENESS_FOR_ITALIC]];	
 	
 	[[self undoManager] setActionName:NSLocalizedString(@"Italic",nil)];
+}
+
+- (void)strikethrough:(id)sender {
+	
+	[self applyStyleOfTrait:0 alternateAttributeName:NSStrikethroughStyleAttributeName 
+	alternateAttributeValue:[NSNumber numberWithInt:NSUnderlineStyleSingle]];
+	
+	[[self undoManager] setActionName:NSLocalizedString(@"Strikethrough",nil)];
 }
 
 - (void)applyStyleOfTrait:(NSFontTraitMask)trait alternateAttributeName:(NSString*)attrName alternateAttributeValue:(id)value {

@@ -59,6 +59,7 @@
 - (void)underlineNV:(id)sender;
 - (void)bold:(id)sender;
 - (void)italic:(id)sender;
+- (void)strikethrough:(id)sender;
 - (void)applyStyleOfTrait:(NSFontTraitMask)trait alternateAttributeName:(NSString*)attrName alternateAttributeValue:(id)value;
 //- (void)suggestComplete:(id)sender;
 - (id)highlightLinkAtIndex:(unsigned)givenIndex;
